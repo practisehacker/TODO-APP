@@ -1,32 +1,20 @@
-//firstly we have installed express using terminal then required it here
 const express = require("express");
-const path = require("path");
-const db = require("./config/mongoose");
-const Todo = require("./models/todo.js");
-//we have required all the files that are required
-const app = express();
-const port = 8080;
-//here we have called the express in const app and defined const port
+// here also we have required the express
+const router = express.Router();
+// we have created the router
+const homeController = require("../controller/home_controller");
+const createTodo = require("../controller/create_todo");
+const deleteTodo = require("../controller/delete_todo");
+// we have creted three controller that is for home create and delete tasks
+// basically we have created the controller function in controller folder so we have required these functions here
+console.log("router is loaded");
+router.get("/", homeController.home);
+// here i gave console.log statement for testing
+// then router.get will get executed when the request is for home or "/"
+// means home controller is called and .home is the object name
+router.post("/create-todo", createTodo.createNewTodo);
+router.get("/delete-todo", deleteTodo.delete);
+//  same way as above we have controller for create todo and delete todo
 
-app.set("view engine", "ejs");
-app.set("views", "./views");
-//we have set the view engine as ejs and
-//and for views we have directed it to views folder
-app.use(express.urlencoded());
-// parses urlencoded bodies and returns where the content type header matches type option
-app.use(express.static("assets"));
-//it is used to use assets like css image etc
-
-app.use("/", require("./routes"));
-
-//we have not created the controller we have directed it towards routes
-
-app.listen(port, function (err) {
-  if (err) {
-    console.log("error found in running the server", err);
-    return;
-  }
-  console.log("Server is succesfully running on port ", port);
-});
-
-// above function will listen at particular port and after that function will execute
+module.exports = router;
+// then at last we have exported router

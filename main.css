@@ -1,0 +1,116 @@
+#heading {
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: chocolate;
+  display: flex;
+  margin-left: 700px;
+/* css for heading */
+}
+#form-div {
+/* css for form  */
+  background-image: linear-gradient(#ba5370, #f4e2d8);
+  display: flex;
+  flex-direction: column;
+  margin-left: 400px;
+  height: 200px;
+  width: 800px;
+  border-radius: 10px;
+}
+#description {
+  display: block;
+  height: 40px;
+  width: 550px;
+  margin-top: 25px;
+  margin-left: 20px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+/* css for description box */
+}
+#date-label {
+  display: inline;
+  margin-left: 25px;
+  margin-top: 25px;
+  /* we have created a label for date so css for date label */
+}
+#date {
+  display: inline-block;
+  height: 40px;
+  border-radius: 10px;
+  margin-left: 20px;
+  /* css for date dialog box */
+}
+#label {
+  display: inline;
+  margin-left: 460px;
+  /* css for category label */
+}
+#option-select {
+  display: inline;
+  margin-left: 400px;
+  height: 40px;
+  border-radius: 10px;
+  /* css for option select box */
+}
+#add-button {
+  border-radius: 10px;
+  background-color: #444444;
+  height: 50px;
+  width: 170px;
+  margin-left: 230px;
+  margin-top: 62px;
+  display: inline;
+  font-size: 20px;
+  font-weight: bold;
+  color: aliceblue;
+  /* css for add button */
+}
+
+#delete-todo {
+  border-radius: 10px;
+  background-color: #ed351e;
+  height: 50px;
+  width: 170px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 29px;
+  color: aliceblue;
+  /* css for delete todo button */
+}
+#todo-table {
+    margin-left: 400px;
+  width: 600px;
+  background-color: azure;
+  /* css for todo table which will display the content */
+}
+ul.ba {
+  list-style-type: none;
+  /* removed the bullets */
+}
+#para1 {
+  display: inline;
+  max-width: 200px;
+  width: 100px;
+  margin-left: 20px;
+  /* css for first line of table description */
+}
+#para2 {
+  display: inline;
+  margin-left: 200px;
+  /* css for date */
+}
+#para3 {
+  display: block;
+  margin-left: 20px;
+  border: 1px solid black;
+  background-color: burlywood;
+  width: 55px ;
+  /* css for category */
+}
+#list {
+  border: 1px solid black;
+  border-radius: 5px;
+  /* css for list that will display all 3 entries */
+}
