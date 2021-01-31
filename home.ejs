@@ -1,0 +1,90 @@
+<!-- created html structure -->
+
+<html>
+  <head>
+    <link rel="stylesheet" href="/css/main.css" />
+    <!-- linked css file -->
+  </head>
+  <body>
+    <p id="heading">TODO APP</p>
+    <!-- Heading is given -->
+    <div id="form-div">
+      <form action="/create-todo" method="post">
+        <!-- created a form which will take description date and type of task -->
+        <input
+          id="description"
+          type="text"
+          name="description"
+          placeholder="Enter Description"
+          required
+        />
+        <!-- these will take description -->
+        <label for="date" id="date-label">Enter Date</label>
+        <!-- we have also created label which will be displayed above  -->
+        <label id="label" for="option-select">Choose a category:</label>
+        <br />
+        <input
+          id="date"
+          type="date"
+          name="dueDate"
+          placeholder="Date"
+          required
+        />
+
+        <!-- above tag will take date -->
+
+        <select
+          type="checkbox"
+          method="post"
+          name="category"
+          placeholder=""
+          id="option-select"
+        >
+          <option value="">--Please choose an option--</option>
+          <option value="Home">🏡Home</option>
+          <option value="Personal">🧔Personal</option>
+          <option value="Job">💼 job</option>
+          <option value="School">🎓School</option>
+          <option value="Other">🉐Other</option>
+        </select>
+        <!-- above tah wil create the option of drop down menu -->
+        <br />
+
+        <button id="add-button" type="submit" name="">ADD TASK</button>
+        <!-- these button will submit the task to the server -->
+        <div>
+          <% for(let i of todo_list) { %>
+          <!-- these loop is used to traverse the list content -->
+
+          <div>
+            <a href="/delete-contact/?id=<%= i._id %>"> </a>
+            <!-- deleting the contact using the id-->
+          </div>
+
+          <% } %>
+        </div>
+      </form>
+    </div>
+
+    <div>
+      <ul id="todo-table" class="ba">
+        <form method="get" action="/delete-todo">
+          <input type="submit" id="delete-todo" value="Delete Todo" />
+          <!-- above button will delete the selected entry -->
+          <% for(let i of todo_list) { %>
+          <li id="list">
+            <input type="checkbox" id="checkbox" name="id" value="<%=i._id%>" />
+            <P id="para1"><%= i.description %></P>
+            <p id="para2">🗓<%= i.dueDate %></p>
+            <p id="para3"><%= i.category %></p>
+          </li>
+
+          <!-- these loop will print the entries of the database -->
+
+          <% } %>
+        </form>
+      </ul>
+    </div>
+  </body>
+</html>
+<!-- above are the closing tags of html -->
